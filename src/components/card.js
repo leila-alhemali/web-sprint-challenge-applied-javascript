@@ -47,16 +47,17 @@ author.appendChild(imgContainer);
 imgContainer.appendChild(authorPhoto);
 author.appendChild(span);
 
-const cardsContainer = document.querySelector('.cards-container')
-cardsContainer.appendChild(cards)
+
 
 //create clickEvent
 cards.addEventListener('click', () => {
   console.log(article.headline)
 })
 
+
 //return
  return cards
+
 }
 
 // console.log(Card({authorPhoto: 'test'}))
@@ -70,11 +71,24 @@ const cardAppender = (selector) => {
   // Create a card from each and every article object in the response, using the Card component.
   // Append each card to the element in the DOM that matches the selector passed to the function.
   //
+
+  const articlesArray = ['javascript', 'bootstrap', 'technology', 'jquery', 'node']
+
+
+
+
   axios.get(`http://localhost:5000/api/articles`)
     .then(resp => {
+      console.log(resp.data.articles)
+      let articleData = [];
+      for (let i = 0; i < articlesArray.length; i++) {
+        let arr = resp.data.articles[articlesArray[i]]
+        articleData = articleData.concat(arr)
+      }
+      console.log(articleData)
       const entryPoint = document.querySelector(selector)
-      for (let i = 0; i < resp.data.articles.javascript.length; i++ ) {
-      entryPoint.appendChild(Card(resp.data.articles.javascript[i]))
+      for (let i = 0; i < articleData.length; i++ ) {
+      entryPoint.appendChild(Card(articleData[i]))
       }
     }).catch(error => {
       console.error(error);

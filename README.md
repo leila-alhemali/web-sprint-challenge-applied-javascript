@@ -60,7 +60,21 @@ In meeting the minimum viable product (MVP) specifications listed below, your pr
 Demonstrate your understanding of this week's concepts by answering the following questions:
 
 1. What is the DOM?
+
+The DOM is an instance of a particular website. It is a data structure tree. Each element in the DOM is considered a branch on the tree. The DOM is accessed through the document element. 
+
 2. What is an event?
+
+An event in any interaction the user makes with the site.
+
 3. What is an event listener?
+
+An event listener is user interaction that the computer 'listens' for as a signal to run the associated block of code.
+
 4. Why would we convert a NodeList into an Array?
+
+A NodeList has a limited number of methods that can be used on it. We convert it to an array if we need to do advanced methods.
+
 5. What is a component?
+
+A component is a function made with JavaScript, HTML and/or CSS. The component receives an element (usually an object or array) to create multiple versions of whatever the component creates.

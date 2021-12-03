@@ -49,7 +49,6 @@ const tabsAppender = (selector) => {
     }).catch(error => {
       console.error(error);
     }).finally(() => console.log('another one'));
-
 }
 
 export { Tabs, tabsAppender }
