@@ -1,4 +1,4 @@
-import { createConfigItem } from "@babel/core"
+
 
 const Header = (title, date, temp) => {
   // TASK 1
@@ -23,7 +23,8 @@ const objTemp = document.createElement('span');
 //add text/classes
 header.classList.add('header');
 objDate.classList.add('date');
-objDate.textContent = title;
+objDate.textContent = date;
+objTitle.textContent = title;
 objTemp.classList.add('temp');
 objTemp.textContent = temp;
 
@@ -31,6 +32,9 @@ objTemp.textContent = temp;
 header.appendChild(objDate);
 header.appendChild(objTitle);
 header.appendChild(objTemp);
+
+//return
+return header
 
 }
 
@@ -45,6 +49,6 @@ const entryPoint = document.querySelector(selector)
 entryPoint.appendChild(Header('BloomTech News', '45F', 'Dec. 3rd 2021'))
 }
 
-headerAppender('.header-container')
+
 
 export { Header, headerAppender }

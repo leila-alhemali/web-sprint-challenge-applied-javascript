@@ -70,7 +70,7 @@ const cardAppender = (selector) => {
   // Create a card from each and every article object in the response, using the Card component.
   // Append each card to the element in the DOM that matches the selector passed to the function.
   //
-  axios.get(`https://localhost:5000/api/articles`)
+  axios.get(`http://localhost:5000/api/articles`)
     .then(resp => {
       const entryPoint = document.querySelector(selector)
       for (let i = 0; i < resp.data.articles.javascript.length; i++ ) {
