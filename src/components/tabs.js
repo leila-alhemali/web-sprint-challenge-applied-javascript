@@ -1,3 +1,5 @@
+import axios from 'axios'
+
 const Tabs = (topics) => {
   // TASK 3
   // ---------------------
@@ -15,7 +17,8 @@ const Tabs = (topics) => {
   //
 
   const topic = document.createElement('div');
-    
+  topic.classList.add('topics')
+
 
   for (let i = 0; i < topics.length; i++){
     let tab = document.createElement('div') 
@@ -23,6 +26,8 @@ const Tabs = (topics) => {
     tab.classList.add('tab')
     tab.textContent = topics[i];
   }  
+
+  return topic
 
 }
 
@@ -47,5 +52,4 @@ const tabsAppender = (selector) => {
 
 }
 
-tabsAppender('.tabs-container')
 export { Tabs, tabsAppender }
